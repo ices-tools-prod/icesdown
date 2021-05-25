@@ -1,0 +1,4 @@
+export("stockReport")
+import("knitr")
+import("rmarkdown")
+import("bookdown")

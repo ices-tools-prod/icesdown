@@ -1,0 +1,17 @@
+Package: icesdown
+Title: ICES Rmarkdown tools
+Version: 0.1.0
+Authors@R: c(
+  person("Iago", "Mosqueira", email = "iago.mosqueira@wur.nl",
+    role = "cre", comment=c(c(ORCID = "0000-0002-3252-0591"))),
+  person("Colin", "Millar", email = "colin.millar@ices.dk",
+    role = "aut"))
+Description: A collection of rmarkdown and pandoc versions of various ICES templates can be found here.
+URL: https://github.com/ices-tools-prod/icesdown
+BugReports: https://github.com/ices-tools-prod/icesdown/issues
+Depends: rmarkdown, knitr
+Imports: bookdown
+VignetteBuilder: knitr
+License: EUPL
+Encoding: UTF-8
+RoxygenNote: 7.1.1
