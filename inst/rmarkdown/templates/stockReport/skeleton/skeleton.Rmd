@@ -1,33 +1,64 @@
 ---
-title: 
-author: Iago MOSQUEIRA (WMR) <iago.mosqueira@wur.nl>
-date: "`r format(Sys.time(), '%d %B, %Y')`"
-documentclass: article
-header-includes: 
-  - \usepackage{float}
-  - \usepackage{lscape}
-  - \usepackage{booktabs}
-  - \usepackage{longtable}
+author: NAME SURNAME (INST) <email@>
 output:
-  pdf_document:
-    fig_caption: yes
-    number_sections: yes
-    toc: yes
-tags:
-abstract:
-license: Creative Commons Attribution-ShareAlike 4.0 International Public License
+  officedown::rdocx_document:
+    reference_num: true
+    number_sections: false
+    reference_docx: !expr system.file('rmarkdown', 'templates', 'stockReport', 'resources', 'reportTemplate.docx', package='icesdown')
+tags: [ICES SOL.27.4 WGNSSK 2021]
 ---
 
-```{r, pkgs, echo=FALSE, message=FALSE}
-library(ggplot2)
+```{r knitr, echo=FALSE, message=FALSE}
 library(knitr)
-```
-
-```{r knitr}
 opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE,
-  fig.width=5, fig.height=3, fig.pos='H')
+  fig.width=6, fig.height=5, out.width="90%", fig.pos='!hbt')
+library(officedown)
+library(officer)
+library(flextable)
 ```
 
+<!-- LOAD pkgs and data -->
+
+```{r pkgs}
+library(FLCore)
+```
+
+```{r data}
+load("output/model.Rdata")
+```
+
+# stock (Gen spp) in area
+
+## Section
+
+### Subsection
 
 
-# References
+
+<!-- EXAMPLES -->
+
+To reference a figure use Figure \@ref(fig:figure), where 'figure' is the name of the chunk.
+
+Similar syntax can be used for tables, like Table \@ref(tab:table), but linked to 'tab.id'.
+
+Values in loaded objects can used in text, for example
+
+- FMSY: Fbar (2021) = `r round(c(refpts$Fmsy), 3)`
+
+## References
+
+<!-- TABLES -->
+
+\newpage
+
+```{r table, tab.cap="Table caption.", tab.id = "table"}
+width(fontsize(colformat_num(ftables$catches, big.mark=""), size=8), width=0.6)
+```
+
+<!-- FIGURES -->
+
+\newpage
+
+```{r figure, fig.cap="Stock in area. Example plot of some quantity."}
+include_graphics('report/section_figure.png')
+```

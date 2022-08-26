@@ -10,7 +10,7 @@ Description: A collection of rmarkdown and pandoc versions of various ICES templ
 URL: https://github.com/ices-tools-prod/icesdown
 BugReports: https://github.com/ices-tools-prod/icesdown/issues
 Depends: rmarkdown, knitr
-Imports: bookdown
+Imports: bookdown, officedown
 VignetteBuilder: knitr
 License: EUPL
 Encoding: UTF-8
