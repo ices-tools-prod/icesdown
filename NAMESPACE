@@ -1,5 +1,11 @@
-export("stockReport")
 import("knitr")
 import("rmarkdown")
 import("bookdown")
 import("officedown")
+import("flextable")
+import("FLCore")
+
+export("stockReport")
+
+exportMethods(
+  "as_flextable")
